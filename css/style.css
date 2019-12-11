@@ -6,3 +6,191 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+header {
+  height: 95vh;
+  position: relative;
+  background-image: linear-gradient(
+      to right,
+      hsla(111, 55%, 64%, 0.795),
+      hsla(160, 64%, 43%, 0.795)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /*this will crop the bottom of the background image*/
+  clip-path: polygon(0 0, 100% 0, 100% 700px, 0 100%);
+  /*to shape the background, from top left to top right to bottom right... */
+}
+
+.logo-box {
+  position: absolute;
+  /*parent element must be relative*/
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.text-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* use top & left to put the left boarder and top boarder to the 50% position. Then offset the box 50% so that the box is at the middle of the screen*/
+  /*this method is not mobile first*/
+}
+
+.header-primary {
+  color: rgb(255, 255, 255);
+}
+
+.header-primary-1 {
+  display: block;
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: 25px;
+  animation: moveInRight 1s;
+  /*
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  */
+}
+
+.header-primary-2 {
+  display: block;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 8px;
+  animation: moveInLeft 1s;
+}
+
+.btn:link,
+.btn:visited {
+  /*:link represent "link" element that has not been visited*/
+  text-transform: uppercase;
+  /*here <a> is treated as TEXT*/
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 60px;
+  margin-top: 40px;
+  border-radius: 100px;
+  transition: all 0.2s;
+  /*spesify all animation happened at this element*/
+  position: relative;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.7s 0.7s;
+  /*delay 0.7s to perform animation*/
+  animation-fill-mode: backwards;
+  /*set the btn state to 0% of the animation which 0 opacity, very tricky!*/
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  /*minus means goes up*/
+  box-shadow: 0 10px 30px rgba(7, 7, 7, 0.384);
+  /* horizontal, vertical, blur, color*/
+}
+
+.btn:active {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(7, 7, 7, 0.384);
+}
+
+.btn-white {
+  background-color: rgb(253, 253, 253);
+  color: #777;
+}
+
+/*here we create a sudo element behide the button, absolute position make it behide the button, the box of the sudo element is the button size*/
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: rgb(255, 253, 253);
+}
+
+.btn:hover::after {
+  transform: scaleX(1.5) scaleY(1.5);
+  opacity: 0;
+  /*the sudo button will become larger at first, then becomes invisible*/
+}
+
+@keyframes moveInRight {
+  /*use @keyframes to define animation*/
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveInLeft {
+  /*use @keyframes to define animation*/
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveInBottom {
+  /*use @keyframes to define animation*/
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
