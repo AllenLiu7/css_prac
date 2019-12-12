@@ -1,0 +1,25 @@
+{
+  "name": "css_prac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllenLiu7/css_prac.git"
+  },
+  "keywords": [
+    "css"
+  ],
+  "author": "Allen Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AllenLiu7/css_prac/issues"
+  },
+  "homepage": "https://github.com/AllenLiu7/css_prac#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}
