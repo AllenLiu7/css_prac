@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  /*use inherit to pass down this property value to children*/
+}
+
+html {
+  font-size: 62.5%;
+  /*here we set the root size in "html", normally root font size is 16px, but change to 10px for easier calculation
+      so 16*62.5%=10px. Using % is for user to change size on their own prefrence.
+      So after this, 1rem = 10px, this apply to ALL size properties*/
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
+  /* allows us to include the padding and border in an element's total width and height.*/
+}
