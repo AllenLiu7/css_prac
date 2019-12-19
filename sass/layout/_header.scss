@@ -1,0 +1,43 @@
+.header {
+  height: 95vh;
+  position: relative;
+  background-image: linear-gradient(
+      to right,
+      rgba($Light-green, 0.795),
+      rgba($Dark-green, 0.795)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /*this will crop the bottom of the background image*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*to shape the background, from top left to top right to bottom right... */
+
+  &__logo-box {
+    position: absolute;
+    /*parent element must be relative*/
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo-box {
+    position: absolute;
+    /*parent element must be relative*/
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* use top & left to put the left boarder and top boarder to the 50% position. Then offset the box 50% so that the box is at the middle of the screen*/
+    /*this method is not mobile first*/
+  }
+}

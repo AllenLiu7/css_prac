@@ -1,155 +1,3 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: inherit;
-  /*use inherit to pass down this property value to children*/
-}
-
-html {
-  font-size: 62.5%;
-  /*here we set the root size in "html", normally root font size is 16px, but change to 10px for easier calculation
-    so 16*62.5%=10px. Using % is for user to change size on their own prefrence.
-    So after this, 1rem = 10px, this apply to ALL size properties*/
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  box-sizing: border-box;
-  /* allows us to include the padding and border in an element's total width and height.*/
-}
-
-.header {
-  height: 95vh;
-  position: relative;
-  background-image: linear-gradient(to right, rgba(85, 197, 122, 0.795), rgba(40, 180, 133, 0.795)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  /*this will crop the bottom of the background image*/
-  clip-path: polygon(0 0, 100% 0, 100% 700px, 0 100%);
-  /*to shape the background, from top left to top right to bottom right... */
-}
-
-.header__logo-box {
-  position: absolute;
-  /*parent element must be relative*/
-  top: 4rem;
-  left: 4rem;
-}
-
-.header__logo {
-  height: 3.5rem;
-}
-
-.header__text-box {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  /* use top & left to put the left boarder and top boarder to the 50% position. Then offset the box 50% so that the box is at the middle of the screen*/
-  /*this method is not mobile first*/
-}
-
-.header-primary {
-  color: white;
-}
-
-.header-primary--1 {
-  display: block;
-  font-size: 7rem;
-  font-weight: 500;
-  letter-spacing: 2.5rem;
-  animation: moveInRight 1s;
-  /*
-    animation-name: moveInRight;
-    animation-duration: 1s;
-    */
-}
-
-.header-primary--2 {
-  display: block;
-  font-size: 3rem;
-  font-weight: 500;
-  letter-spacing: 0.8rem;
-  animation: moveInLeft 1s;
-}
-
-.btn:link,
-.btn:visited {
-  /*:link represent "link" element that has not been visited*/
-  text-transform: uppercase;
-  /*here <a> is treated as TEXT*/
-  text-decoration: none;
-  display: inline-block;
-  padding: 1rem 6rem;
-  margin-top: 4rem;
-  border-radius: 10rem;
-  transition: all 0.2s;
-  /*spesify all animation happened at this element*/
-  position: relative;
-}
-
-.btn--animated {
-  animation: moveInBottom 0.7s 0.7s;
-  /*delay 0.7s to perform animation*/
-  animation-fill-mode: backwards;
-  /*set the btn state to 0% of the animation which 0 opacity, very tricky!*/
-}
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-  /*minus means goes up*/
-  box-shadow: 0 1rem 3rem rgba(7, 7, 7, 0.384);
-  /* horizontal, vertical, blur, color*/
-}
-
-.btn:active {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 0.5rem 1rem rgba(7, 7, 7, 0.384);
-}
-
-.btn--white {
-  background-color: #fdfdfd;
-  color: #777;
-}
-
-/*here we create a sudo element behide the button, absolute position make it behide the button, the box of the sudo element is the button size*/
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-
-.btn--white::after {
-  background-color: #fffdfd;
-}
-
-.btn:hover::after {
-  transform: scaleX(1.5) scaleY(1.5);
-  opacity: 0;
-  /*the sudo button will become larger at first, then becomes invisible*/
-}
-
 @keyframes moveInRight {
   /*use @keyframes to define animation*/
   0% {
@@ -194,6 +42,258 @@ body {
     opacity: 1;
     transform: translateX(0rem);
   }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  /*use inherit to pass down this property value to children*/
+}
+
+html {
+  font-size: 62.5%;
+  /*here we set the root size in "html", normally root font size is 16px, but change to 10px for easier calculation
+      so 16*62.5%=10px. Using % is for user to change size on their own prefrence.
+      So after this, 1rem = 10px, this apply to ALL size properties*/
+}
+
+body {
+  box-sizing: border-box;
+  /* allows us to include the padding and border in an element's total width and height.*/
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+}
+
+.header-primary {
+  color: white;
+}
+.header-primary--1 {
+  display: block;
+  font-size: 7rem;
+  font-weight: 500;
+  letter-spacing: 2.5rem;
+  animation: moveInRight 1s;
+  /*
+          animation-name: moveInRight;
+          animation-duration: 1s;
+          */
+}
+.header-primary--2 {
+  display: block;
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 0.8rem;
+  animation: moveInLeft 1s;
+}
+
+.header-secondary {
+  font-size: 3rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.header-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-1 {
+  margin-bottom: 1rem;
+}
+
+.u-margin-bottom-2 {
+  margin-bottom: 2rem;
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.btn {
+  /*here we create a sudo element behide the button, absolute position make it behide the button, the box of the sudo element is the button size*/
+}
+.btn:link, .btn:visited {
+  /*:link represent "link" element that has not been visited*/
+  text-transform: uppercase;
+  /*here <a> is treated as TEXT*/
+  text-decoration: none;
+  display: inline-block;
+  padding: 1rem 6rem;
+  margin-top: 4rem;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  /*spesify all animation happened at this element*/
+  position: relative;
+}
+.btn--animated {
+  animation: moveInBottom 0.7s 0.7s;
+  /*delay 0.7s to perform animation and the duration is 0.7s*/
+  animation-fill-mode: backwards;
+  /*set the state to 0% of the animation which is 0 opacity, very tricky!*/
+}
+.btn:hover {
+  transform: translateY(-0.3rem);
+  /*minus means goes up*/
+  box-shadow: 0 1rem 3rem rgba(7, 7, 7, 0.384);
+  /* horizontal, vertical, blur, color*/
+}
+.btn:active {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 1rem rgba(7, 7, 7, 0.384);
+}
+.btn--white {
+  background-color: #fdfdfd;
+  color: #777;
+}
+.btn--white::after {
+  background-color: #fffdfd;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.btn:hover::after {
+  transform: scaleX(1.5) scaleY(1.5);
+  opacity: 0;
+  /*the sudo button will become larger at first, then becomes invisible*/
+}
+
+.btn-text:link, .btn-text:visited {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid;
+  color: #7ed56f;
+  font-weight: 600;
+  margin-top: 3rem;
+  transition: all 0.2s;
+  padding: 3px;
+}
+.btn-text:hover {
+  background-color: #7ed56f;
+  color: white;
+  box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.btn-text:active {
+  box-shadow: 0rem 0.5rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0px);
+}
+
+.composition__photo {
+  width: 45%;
+  position: absolute;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.composition__photo--p1 {
+  top: 1rem;
+}
+.composition__photo--p1:hover {
+  width: 50%;
+  z-index: 1;
+  box-shadow: 0rem 0.5rem 2rem rgba(0, 0, 0, 0.55);
+}
+.composition__photo--p2 {
+  top: 8rem;
+  right: 7rem;
+}
+.composition__photo--p2:hover {
+  width: 50%;
+  z-index: 1;
+  box-shadow: 0rem 0.5rem 2rem rgba(0, 0, 0, 0.55);
+}
+.composition__photo--p3 {
+  top: 18rem;
+  left: 21rem;
+}
+.composition__photo--p3:hover {
+  width: 50%;
+  z-index: 1;
+  box-shadow: 0rem 0.5rem 2rem rgba(0, 0, 0, 0.55);
+}
+
+.header {
+  height: 95vh;
+  position: relative;
+  background-image: linear-gradient(to right, rgba(126, 213, 111, 0.795), rgba(40, 180, 133, 0.795)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /*this will crop the bottom of the background image*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*to shape the background, from top left to top right to bottom right... */
+}
+.header__logo-box {
+  position: absolute;
+  /*parent element must be relative*/
+  top: 4rem;
+  left: 4rem;
+}
+.header__logo-box {
+  position: absolute;
+  /*parent element must be relative*/
+  top: 4rem;
+  left: 4rem;
+}
+.header__logo {
+  height: 3.5rem;
+}
+.header__text-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* use top & left to put the left boarder and top boarder to the 50% position. Then offset the box 50% so that the box is at the middle of the screen*/
+  /*this method is not mobile first*/
+}
+
+.about__container {
+  display: flex;
+  flex-direction: row;
+  height: 60rem;
+  justify-content: center;
+}
+
+.about__item--1 {
+  padding: 8rem;
+  margin: 5rem 5rem;
+  width: 40%;
+}
+
+.about__item--2 {
+  padding: 8rem;
+  margin: 5rem;
+  width: 40%;
+  position: relative;
 }
 
 /*# sourceMappingURL=style.css.map */
