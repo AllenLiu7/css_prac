@@ -3,35 +3,32 @@
     width: 45%;
     position: absolute;
     border-radius: 3px;
-    transition: all 0.2s;
+    transition: all 0.3s;
 
     &--p1 {
       top: 1rem;
-      &:hover {
-        width: 50%;
-        z-index: 1;
-        box-shadow: 0rem 0.5rem 2rem rgba($color: #000000, $alpha: 0.55);
-      }
     }
 
     &--p2 {
       top: 8rem;
       right: 7rem;
-      &:hover {
-        width: 50%;
-        z-index: 1;
-        box-shadow: 0rem 0.5rem 2rem rgba($color: #000000, $alpha: 0.55);
-      }
     }
 
     &--p3 {
       top: 18rem;
       left: 21rem;
-      &:hover {
-        width: 50%;
-        z-index: 1;
-        box-shadow: 0rem 0.5rem 2rem rgba($color: #000000, $alpha: 0.55);
-      }
     }
+
+    &:hover {
+      //width: 50%;
+      transform: scale(1.25) translateY(-0.5rem);
+      z-index: 1;
+      box-shadow: 0rem 0.5rem 2rem rgba($color: #000000, $alpha: 0.55);
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.5);
+    // it dosn't work
   }
 }

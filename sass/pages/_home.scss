@@ -5,3 +5,25 @@
   //use minus margin-top to push the background up
   //use 25rem padding top to push the header down
 }
+
+.section-features {
+  padding: 20rem 0rem;
+  margin-top: -15rem;
+  background-image: linear-gradient(
+      to right,
+      rgba($Light-green, 0.795),
+      rgba($Dark-green, 0.795)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  transform: skewY(-7deg);
+  & > * {
+    transform: skewY(7deg);
+  }
+}
+
+.section-tours {
+  background-color: $Light-grey;
+  padding: 35rem 0;
+  margin-top: -20vh;
+}
