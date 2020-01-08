@@ -1,5 +1,5 @@
 .section-about {
-  background-color: $Light-grey;
+  background-color: $color-grey-light;
   padding: 25rem 0;
   margin-top: -20vh;
   //use minus margin-top to push the background up
@@ -11,8 +11,8 @@
   margin-top: -15rem;
   background-image: linear-gradient(
       to right,
-      rgba($Light-green, 0.795),
-      rgba($Dark-green, 0.795)
+      rgba($color-primary-light, 0.795),
+      rgba($color-primary-dark, 0.795)
     ),
     url(../img/nat-4.jpg);
   background-size: cover;
@@ -23,7 +23,14 @@
 }
 
 .section-tours {
-  background-color: $Light-grey;
+  background-color: $color-grey-light;
   padding: 35rem 0;
-  margin-top: -20vh;
+  margin-top: -20rem;
+  height: 120rem;
+}
+
+.section-stories {
+  padding: 15rem 0;
+  height: 120rem;
+  position: relative;
 }

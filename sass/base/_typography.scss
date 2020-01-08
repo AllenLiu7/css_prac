@@ -8,7 +8,7 @@ body {
 }
 
 .header-primary {
-  color: $color-main-white;
+  color: $color-white;
 
   &--1 {
     display: block;
@@ -36,7 +36,11 @@ body {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
   display: inline-block;
-  background-image: linear-gradient(to right, $Light-green, $Dark-green);
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
   -webkit-background-clip: text;
   color: transparent;
 }

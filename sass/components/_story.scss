@@ -1,0 +1,61 @@
+.story {
+  background-color: rgba($color-white, $alpha: 0.6);
+  width: 55%;
+  margin: 5rem auto;
+  padding: 6rem;
+  box-shadow: 0 3rem 6rem $color-shadow;
+  //box shadow can create a card like shape
+  border-radius: 3px;
+  transform: skewX(-12deg);
+
+  // style of the story card
+  &__shape {
+    height: 15rem;
+    width: 15rem;
+    float: left;
+    margin-left: 2.5rem;
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    transform: translateX(-2.5rem) skewX(12deg);
+    position: relative;
+
+    &-image {
+      height: 100%;
+      transform: translateX(-4rem) scale(1.4);
+      transition: all 0.5s;
+      backface-visibility: hidden;
+    }
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &__caption {
+    color: white;
+    font-weight: 800;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    //set the starting status
+    opacity: 0;
+    transform: translate(-50%, 0%);
+    transition: all 0.2s;
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__shape-image {
+    filter: blur(1px) brightness(80%);
+    transform: translateX(-4rem) scale(1);
+  }
+}

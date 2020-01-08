@@ -22,7 +22,11 @@
   &__icon {
     font-size: 6rem;
     display: inline-block;
-    background-image: linear-gradient(to right, $Light-green, $Dark-green);
+    background-image: linear-gradient(
+      to right,
+      $color-primary-light,
+      $color-primary-dark
+    );
     -webkit-background-clip: text;
     color: transparent;
   }
