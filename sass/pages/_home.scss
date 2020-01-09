@@ -34,3 +34,96 @@
   height: 120rem;
   position: relative;
 }
+
+.section-book {
+  background-image: linear-gradient(
+    to right,
+    rgba($color-primary-light, 0.795),
+    rgba($color-primary-dark, 0.795)
+  );
+  padding: 20rem 45rem;
+}
+
+.book {
+  background-image: linear-gradient(
+      105deg,
+      rgba($color-white, 0.9) 0%,
+      rgba($color-white, 0.9) 50%,
+      transparent 50%
+    ),
+    url(../../img/nat-10.jpg);
+  background-size: 100%;
+  height: 50rem;
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
+}
+
+//styles for footer
+.section__footer {
+  background-color: rgb(53, 47, 47);
+}
+
+.footer {
+  padding: 10rem 0;
+
+  &__logo-box {
+    text-align: center;
+  }
+
+  &__logo {
+    transform: scale(0.5);
+    margin: 5rem auto;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20rem;
+  }
+
+  &__navigation {
+    width: 35%;
+    border-top: 1px solid white;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 5rem;
+
+      li {
+        list-style: none;
+        &:not(:last-child) {
+          margin-right: 5rem;
+        }
+
+        a {
+          &:link,
+          &:visited {
+            color: white;
+            text-decoration: none;
+          }
+
+          &:hover,
+          &:active {
+            color: $color-primary-dark;
+          }
+        }
+      }
+    }
+  }
+
+  &__copyright {
+    width: 35%;
+    color: white;
+    padding-top: 5rem;
+    border-top: 1px solid white;
+  }
+}
+
+.logo {
+  transform: scale(0.5);
+  margin: 5rem auto;
+}

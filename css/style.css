@@ -113,19 +113,19 @@ p {
 }
 
 .u-center-text {
-  text-align: center;
+  text-align: center !important;
 }
 
 .u-margin-bottom-1 {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 .u-margin-bottom-2 {
-  margin-bottom: 6rem;
+  margin-bottom: 6rem !important;
 }
 
 .u-margin-bottom-3 {
-  margin-bottom: 12rem;
+  margin-bottom: 12rem !important;
 }
 
 .section-about {
@@ -158,10 +158,78 @@ p {
   position: relative;
 }
 
+.section-book {
+  background-image: linear-gradient(to right, rgba(85, 197, 122, 0.795), rgba(40, 180, 133, 0.795));
+  padding: 20rem 45rem;
+}
+
+.book {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url(../../img/nat-10.jpg);
+  background-size: 100%;
+  height: 50rem;
+}
+.book__form {
+  width: 50%;
+  padding: 6rem;
+}
+
+.section__footer {
+  background-color: #352f2f;
+}
+
+.footer {
+  padding: 10rem 0;
+}
+.footer__logo-box {
+  text-align: center;
+}
+.footer__logo {
+  transform: scale(0.5);
+  margin: 5rem auto;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20rem;
+}
+.footer__navigation {
+  width: 35%;
+  border-top: 1px solid white;
+}
+.footer__navigation ul {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5rem;
+}
+.footer__navigation ul li {
+  list-style: none;
+}
+.footer__navigation ul li:not(:last-child) {
+  margin-right: 5rem;
+}
+.footer__navigation ul li a:link, .footer__navigation ul li a:visited {
+  color: white;
+  text-decoration: none;
+}
+.footer__navigation ul li a:hover, .footer__navigation ul li a:active {
+  color: #28b485;
+}
+.footer__copyright {
+  width: 35%;
+  color: white;
+  padding-top: 5rem;
+  border-top: 1px solid white;
+}
+
+.logo {
+  transform: scale(0.5);
+  margin: 5rem auto;
+}
+
 .btn {
   /*here we create a sudo element behide the button, absolute position make it behide the button, the box of the sudo element is the button size*/
 }
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   /*:link represent "link" element that has not been visited*/
   text-transform: uppercase;
   /*here <a> is treated as TEXT*/
@@ -173,6 +241,8 @@ p {
   transition: all 0.2s;
   /*spesify all animation happened at this element*/
   position: relative;
+  border: none;
+  cursor: pointer;
 }
 .btn--animated {
   animation: moveInBottom 0.7s 0.7s;
@@ -186,9 +256,17 @@ p {
   box-shadow: 0 1rem 3rem rgba(7, 7, 7, 0.384);
   /* horizontal, vertical, blur, color*/
 }
-.btn:active {
+.btn:active, .btn:focus {
+  outline: none;
   transform: translateY(-0.3rem);
   box-shadow: 0 0.5rem 1rem rgba(7, 7, 7, 0.384);
+}
+.btn--green {
+  background-color: #55c57a;
+  color: #fff;
+}
+.btn--green::after {
+  background-color: #55c57a;
 }
 .btn--white {
   background-color: #fdfdfd;
@@ -473,6 +551,87 @@ p {
 .card__price-value {
   font-size: 6rem;
   font-weight: 100;
+}
+
+.form__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.form__input {
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  font-family: inherit;
+  color: inherit;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+  transition: all 0.3s;
+}
+.form__input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #7ed56f;
+}
+.form__input:focus:invalid {
+  border-bottom: 3px solid orangered;
+}
+.form__input::-webkit-input-placeholder {
+  color: #777;
+}
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: 0.7rem;
+  display: block;
+  transition: all 0.3s;
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__radio-group {
+  display: inline-block;
+  width: 49%;
+}
+.form__radio-input {
+  display: none;
+}
+.form__radio-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem;
+}
+.form__radio-button {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #7ed56f;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+}
+.form__radio-button::after {
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #7ed56f;
+  opacity: 0;
+  transition: all 0.2s;
+}
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1;
 }
 
 .header {

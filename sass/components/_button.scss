@@ -1,4 +1,5 @@
 .btn {
+  &,
   &:link,
   &:visited {
     /*:link represent "link" element that has not been visited*/
@@ -12,6 +13,10 @@
     transition: all 0.2s;
     /*spesify all animation happened at this element*/
     position: relative;
+
+    //change for the button element
+    border: none;
+    cursor: pointer;
   }
 
   &--animated {
@@ -28,9 +33,21 @@
     /* horizontal, vertical, blur, color*/
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    // remove the outline after clicking
+    outline: none;
     transform: translateY(-0.3rem);
     box-shadow: 0 0.5rem 1rem rgba(7, 7, 7, 0.384);
+  }
+
+  &--green {
+    background-color: $color-primary-light;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary-light;
+    }
   }
 
   &--white {
