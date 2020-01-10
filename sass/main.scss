@@ -1,23 +1,25 @@
 @import "abstracts/variable";
 //variable shoule be imported first, so that you can use them in the following files***
+@import "abstracts/function";
+@import "abstracts/mixin";
 
 @import "base/animation";
 @import "base/base";
 @import "base/typography";
 @import "base/utility";
 
-@import "abstracts/function";
-@import "abstracts/mixin";
-
 @import "pages/home";
+
 @import "components/button";
 @import "components/composition";
 @import "components/feature-box";
 @import "components/bg-video";
 @import "components/story";
 @import "components/card";
-
 @import "components/form";
+@import "components/popup";
+
 @import "layout/header";
 @import "layout/about";
 @import "layout/feature";
+@import "layout/navigation";

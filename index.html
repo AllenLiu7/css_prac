@@ -16,6 +16,31 @@
     <title>Natours | Exciting tours for adventurous people</title>
   </head>
   <body>
+
+
+    <!--Nvigation-->
+    <div class="navigation">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+      <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+      </label>
+
+      <div class="navigation__background">&nbsp;</div>
+
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item"><a href="#" class="navigation__link">About Natous</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link">Your Benifits</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link">Popular tours</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link">Stories</a></li>
+          <li class="navigation__item"><a href="#" class="navigation__link">Book now</a></li>
+        </ul>
+      </nav>
+    </div>
+    
+
+    <!--Header-->
     <header class="header">
       <div class="header__logo-box">
         <img src="./img/logo-white.png" alt="logo" class="header__logo" />
@@ -28,7 +53,11 @@
         <a href="#" class="btn btn--white btn--animated">explore</a>
       </div>
     </header>
+
     <main>
+
+
+      <!--About Section-->
       <section class="section-about">
         <div class="u-center-text">
           <h3 class="header-secondary">
@@ -80,12 +109,14 @@
           </div>
         </div>
       </section>
+
+
+      <!--Feature Section-->
       <section class="section-features">
         <div class="feature-box__container">
           <div class="feature-box">
             <i class="feature-box__icon icon-basic-world"></i>
             <h3 class=" header-tertiary">this is the h3 header</h3>
-
             <p class="feature-box__text">
               rem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
               facilisis, sem ut venenatis sagittis, ligula elit
@@ -94,7 +125,6 @@
           <div class="feature-box">
             <i class="feature-box__icon icon-basic-compass"></i>
             <h3 class="header-tertiary">this is the h3 header</h3>
-
             <p class="feature-box__text">
               rem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
               facilisis, sem ut venenatis sagittis, ligula elit
@@ -103,7 +133,6 @@
           <div class="feature-box">
             <i class="feature-box__icon icon-basic-map"></i>
             <h3 class="header-tertiary">this is the h3 header</h3>
-
             <p class="feature-box__text">
               rem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
               facilisis, sem ut venenatis sagittis, ligula elit
@@ -112,7 +141,6 @@
           <div class="feature-box">
             <i class="feature-box__icon icon-basic-heart"></i>
             <h3 class="header-tertiary">this is the h3 header</h3>
-
             <p class="feature-box__text">
               rem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
               facilisis, sem ut venenatis sagittis, ligula elit
@@ -120,6 +148,9 @@
           </div>
         </div>
       </section>
+
+
+      <!--Tours Section-->
       <section class="section-tours">
         <div class="u-center-text u-margin-bottom-3">
           <h3 class="header-secondary">
@@ -127,7 +158,6 @@
           </h3>
         </div>
         <div class="card__container">
-
           <!--card 1-->
           <div class="card">
             <div class="card__side card__side--front card__side--front-1">
@@ -159,7 +189,6 @@
               </div>
             </div>
           </div>
-
           <!--card 2-->
           <div class="card">
             <div class="card__side card__side--front card__side--front-2">
@@ -175,7 +204,6 @@
             card text back
           </div>
         </div>
-
         <!--card 3-->
         <div class="card">
           <div class="card__side card__side--front card__side--front-3">
@@ -192,6 +220,9 @@
           </div>
         </div>
       </section>
+
+
+      <!--Stories Section-->
       <section class="section-stories">
         <div class="bg-video">
           <video class="bg-video__content" autoplay muted loop>
@@ -243,6 +274,9 @@
               <a href="#" class="btn-text">Discover all tours</a>
             </div>
       </section>
+
+
+      <!--Book Section-->
       <section class="section-book">
         <div class="book">
           <div class="book__form">
@@ -274,7 +308,6 @@
                       <span class="form__radio-button"></span>
                       Large tour group
                     </label>
-              
                   </div>
                 </div>
                 <div class="form__group">
@@ -284,12 +317,14 @@
           </div>
         </div>
       </section>
+
+
+      <!--Footer Section-->
       <section class="section__footer">
         <div class="footer__logo-box">
           <img src="./img/logo-green-2x.png" class="footer__logo" alt="footer-logo">
         </div>
         <div class="footer__container">
-
           <div class="footer__navigation">
             <ul>
               <li><a href="#">COMPANY</a></li>
@@ -302,9 +337,12 @@
           <p class="footer__copyright">
             Credit to Jonas Schmedtmann 
           </p>
-
         </div>
       </section>
+
+      <div class="popup">
+        <div class="popup__content">popup</div>
+      </div>
     </main>
   </body>
 </html>
