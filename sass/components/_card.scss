@@ -1,12 +1,7 @@
-.card__container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
-  width: 16%;
+  width: 25%;
   height: 50rem;
   //since all the child elements are setted to absolute positioning, the card parent collaps with a 0 height.
   //when reset the the card to the same height as its child, it has height again and fix the shaking problem magically.
@@ -29,7 +24,6 @@
 
     //card back side style
     &--back {
-      background-color: greenyellow;
       transform: rotateY(180deg);
 
       &-1 {
@@ -117,17 +111,33 @@
     width: 75%;
   }
 
-  &__heading-span {
+  &__heading--span {
     padding: 1rem 1.5rem;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
     //this is for google chrome
 
-    &--1 {
+    &-1 {
       background-image: linear-gradient(
         to right bottom,
         rgba($color-secondary-light, 0.85),
         rgba($color-secondary-dark, 0.85)
+      );
+    }
+
+    &-2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
+      );
+    }
+
+    &-3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
       );
     }
   }
@@ -177,6 +187,45 @@
     &-value {
       font-size: 6rem;
       font-weight: 100;
+    }
+  }
+
+  @include respond(tab-land) {
+    width: 100%;
+    height: 110rem;
+
+    &__side {
+      transition: all 0.8s ease;
+      width: 100%;
+      position: static;
+
+      &--front {
+        height: 60rem;
+      }
+
+      //card back side style
+      &--back {
+        margin-top: -10rem;
+        transform: rotateY(0deg);
+        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &:hover &__side--back {
+      transform: rotateY(0deg);
+    }
+
+    //front side style
+    &__image {
+      height: 23rem;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+      //this will cancel the overflow:hidden, so you have to round the coner with extra code.
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
     }
   }
 }

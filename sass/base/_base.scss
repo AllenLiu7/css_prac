@@ -10,9 +10,27 @@ html {
   /*here we set the root size in "html", normally root font size is 16px, but change to 10px for easier calculation
       so 16*62.5%=10px. Using % is for user to change size on their own prefrence.
       So after this, 1rem = 10px, this apply to ALL size properties*/
+
+  @include respond(tab-land) {
+    font-size: 56.25%; //1 rem = 9px
+  }
+  @include respond(tab-port) {
+    font-size: 50%; //1 rem = 8px
+  }
+  @include respond(big-desktop) {
+    font-size: 75%; //1 rem = 12px
+  }
 }
 
 body {
   box-sizing: border-box;
   /* allows us to include the padding and border in an element's total width and height.*/
+  padding: 3rem;
+
+  @include respond(tab-land) {
+    padding: 0rem;
+  }
+  @include respond(tab-port) {
+    padding: 0rem;
+  }
 }

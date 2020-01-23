@@ -6,13 +6,81 @@
   left: 0;
   position: fixed;
   z-index: 4000;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s;
+
+  &:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:target &__content {
+    opacity: 1;
+    //again, if there are two transform, they should be put together
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      position: absolute;
+      color: $color-grey-dark;
+      top: 2rem;
+      right: 3rem;
+      text-decoration: none;
+      font-size: 3rem;
+      transition: all 0.2s;
+    }
+    &:hover {
+      color: $color-primary;
+    }
+  }
 
   &__content {
+    @include center;
+
     position: absolute;
-    height: 60%;
+    //height: 60%;
     width: 60%;
     background-color: $color-white;
     border-radius: 3px;
-    @include center;
+    display: table;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+    //delay .2s
+    transition: all 0.5s 0.2s;
+  }
+
+  &__left {
+    width: 33.333333%;
+    display: table-cell;
+  }
+
+  &__right {
+    width: 66.666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem;
+  }
+
+  &__image {
+    display: block;
+    //by default the width of the img will be ites original size, so you need to specify it
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 2;
+
+    //these properties needs prefix to work in all browsers.
+    //but you should use auto prefixer rather than hand type.
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey-light;
+
+    hyphens: auto;
   }
 }

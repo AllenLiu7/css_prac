@@ -4,6 +4,7 @@
     position: absolute;
     border-radius: 3px;
     transition: all 0.3s;
+    z-index: 1000;
 
     &--p1 {
       top: 1rem;
@@ -30,5 +31,41 @@
   &:hover &__photo:not(:hover) {
     transform: scale(0.5);
     // it dosn't work
+  }
+
+  @include respond(phone) {
+    &__photo {
+      width: 45%;
+      position: absolute;
+      border-radius: 3px;
+      transition: all 0.3s;
+      z-index: 1000;
+
+      &--p1 {
+        top: 0rem;
+        left: -14rem;
+      }
+
+      &--p2 {
+        top: 0rem;
+        right: 18rem;
+      }
+
+      &--p3 {
+        top: 0rem;
+        left: 32rem;
+      }
+
+      &:hover {
+        transform: none;
+        z-index: 1500;
+        box-shadow: 0rem 0.5rem 2rem rgba($color: #000000, $alpha: 0.55);
+      }
+    }
+
+    &:hover &__photo:not(:hover) {
+      transform: none;
+      // it dosn't work
+    }
   }
 }

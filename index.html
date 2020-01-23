@@ -64,7 +64,7 @@
             This is the about header
           </h3>
         </div>
-        <div class="about__container">
+        <div class="container">
           <div class="about__item--1">
             <h3 class="header-tertiary u-margin-bottom-1">
               this is the h3 header
@@ -113,7 +113,7 @@
 
       <!--Feature Section-->
       <section class="section-features">
-        <div class="feature-box__container">
+        <div class="container">
           <div class="feature-box">
             <i class="feature-box__icon icon-basic-world"></i>
             <h3 class=" header-tertiary">this is the h3 header</h3>
@@ -151,7 +151,7 @@
 
 
       <!--Tours Section-->
-      <section class="section-tours">
+      <section class="section-tours" id="section-tours">
         <div class="u-center-text u-margin-bottom-3">
           <h3 class="header-secondary">
             This is the about header
@@ -165,7 +165,7 @@
                 &nbsp;
               </div>
               <h4 class="card__heading">
-                <span class="card__heading-span card__heading-span--1">
+                <span class="card__heading-span card__heading--span-1">
                   The Sea Explorer
                 </span>
               </h4>
@@ -185,7 +185,7 @@
                   <p class="card__price-only">only</p>
                   <p class="card__price-value">$294</p>
                 </div>
-                <a href="#" class="btn btn--white">Book Now</a>
+                <a href="#popup" class="btn btn--white">Book Now</a>
               </div>
             </div>
           </div>
@@ -198,10 +198,24 @@
                 The Sea Explorer
               </span>
             </h4>
-            <div class="card__detai"></div>
+            <div class="card__detail">
+              <ul>
+                <li>3 days tours</li>
+                <li>Up to 30 people</li>
+                <li>2 tour guides</li>
+                <li>Sleep in cozy hotels</li>
+                <li>Difficulty:easy</li>
+              </ul>
+            </div>
           </div>
           <div class="card__side card__side--back card__side--back-2">
-            card text back
+            <div class="card__cta">
+              <div class="card__price-box">
+                <p class="card__price-only">only</p>
+                <p class="card__price-value">$294</p>
+              </div>
+              <a href="#popup" class="btn btn--white">Book Now</a>
+            </div>
           </div>
         </div>
         <!--card 3-->
@@ -213,10 +227,24 @@
                 The Sea Explorer
               </span>
             </h4>
-            <div class="card__detai"></div>
+            <div class="card__detail">
+              <ul>
+                <li>3 days tours</li>
+                <li>Up to 30 people</li>
+                <li>2 tour guides</li>
+                <li>Sleep in cozy hotels</li>
+                <li>Difficulty:easy</li>
+              </ul>
+            </div>
           </div>
           <div class="card__side card__side--back card__side--back-3">
-            card text back
+            <div class="card__cta">
+              <div class="card__price-box">
+                <p class="card__price-only">only</p>
+                <p class="card__price-value">$294</p>
+              </div>
+              <a href="#popup" class="btn btn--white">Book Now</a>
+            </div>
           </div>
         </div>
       </section>
@@ -340,8 +368,27 @@
         </div>
       </section>
 
-      <div class="popup">
-        <div class="popup__content">popup</div>
+      <div class="popup" id="popup">
+        <div class="popup__content">
+          <div class="popup__left">
+            <img src="img/nat-8.jpg" alt="Tour photo" class="popup__image">
+            <img src="img/nat-9.jpg" alt="Tour photo" class="popup__image">
+          </div>
+          <div class="popup__right">
+            <a href="#section-tours" class="popup__close">&times;</a>
+            <h2 class="header-secondary u-margin-bottom-2">Start booking now</h2>
+            <h3 class="header-tertiary u-margin-bottom-1">Important &ndash; Please read these terms before booking</h3>
+            <p class="popup__text">
+              rem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              facilisis, sem ut venenatis sagittis, ligula elit rem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              facilisis, sem ut venenatis sagittis, ligula elit rem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              facilisis, sem ut venenatis sagittis, ligula elit sem ut venenatis sagittis, ligula elit rem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              facilisis, sem ut venenatis sagittis, ligula elit sem ut venenatis sagittis, ligula elit rem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+              facilisis, sem ut venenatis sagittis, ligula elit
+            </p>
+            <a href="#" class="btn btn--green">Book Now</a>
+          </div>
+        </div>
       </div>
     </main>
   </body>
