@@ -6,12 +6,21 @@
       rgba($color-primary-light, 0.795),
       rgba($color-primary-dark, 0.795)
     ),
-    url(../img/hero.jpg);
+    url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   /*this will crop the bottom of the background image*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /*to shape the background, from top left to top right to bottom right... */
+
+  @media (min-resolution: 192dpi) {
+    background-image: linear-gradient(
+        to right,
+        rgba($color-primary-light, 0.795),
+        rgba($color-primary-dark, 0.795)
+      ),
+      url(../img/hero.jpg);
+  }
 
   &__logo-box {
     position: absolute;

@@ -291,11 +291,9 @@ p {
   background-size: 100%;
 }
 
-.footer {
-  padding: 10rem 0;
-}
 .footer__logo-box {
   text-align: center;
+  padding: 5rem 0;
 }
 .footer__logo {
   transform: scale(0.5);
@@ -948,12 +946,17 @@ p {
 .header {
   height: 95vh;
   position: relative;
-  background-image: linear-gradient(to right, rgba(85, 197, 122, 0.795), rgba(40, 180, 133, 0.795)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right, rgba(85, 197, 122, 0.795), rgba(40, 180, 133, 0.795)), url(../img/hero-small.jpg);
   background-size: cover;
   background-position: top;
   /*this will crop the bottom of the background image*/
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /*to shape the background, from top left to top right to bottom right... */
+}
+@media (min-resolution: 192dpi) {
+  .header {
+    background-image: linear-gradient(to right, rgba(85, 197, 122, 0.795), rgba(40, 180, 133, 0.795)), url(../img/hero.jpg);
+  }
 }
 .header__logo-box {
   position: absolute;
